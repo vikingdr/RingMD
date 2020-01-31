@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RingMedicalSchoolSearchViewController">
+            <connections>
+                <outlet property="searchBar" destination="lBr-D0-S88" id="w6N-IB-qXD"/>
+                <outlet property="tableView" destination="uOU-wQ-SXC" id="IwY-WQ-4pV"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Pq0-Ua-jb4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cDx-ja-TBE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uOU-wQ-SXC">
+                    <rect key="frame" x="0.0" y="110" width="320" height="458"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="a94-ht-BnK"/>
+                        <outlet property="delegate" destination="-1" id="Hh2-ar-BzP"/>
+                    </connections>
+                </tableView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="lBr-D0-S88">
+                    <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0FH-BW-SUc"/>
+                    </connections>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="lBr-D0-S88" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="08O-er-BbR"/>
+                <constraint firstAttribute="trailing" secondItem="lBr-D0-S88" secondAttribute="trailing" id="I94-Hl-AK6"/>
+                <constraint firstItem="uOU-wQ-SXC" firstAttribute="top" secondItem="lBr-D0-S88" secondAttribute="bottom" id="NdO-pF-r4O"/>
+                <constraint firstItem="lBr-D0-S88" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="dsc-hS-MuT"/>
+                <constraint firstAttribute="trailing" secondItem="uOU-wQ-SXC" secondAttribute="trailing" id="fuM-l1-Kdd"/>
+                <constraint firstAttribute="bottom" secondItem="uOU-wQ-SXC" secondAttribute="bottom" id="jfC-26-FUa"/>
+                <constraint firstItem="uOU-wQ-SXC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rfR-ll-6Gw"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="348" y="183"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

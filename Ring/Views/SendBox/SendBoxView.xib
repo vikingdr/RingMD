@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view tag="1" contentMode="scaleToFill" id="1" customClass="RingSendBox">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNK-OO-VgU">
+                    <rect key="frame" x="7" y="7" width="273" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="9R0-dw-lP3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                    <connections>
+                        <outlet property="delegate" destination="1" id="8Zb-68-myh"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHg-Ei-q9Q" userLabel="Attach">
+                    <rect key="frame" x="280" y="2" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="B1s-aK-xcA"/>
+                        <constraint firstAttribute="width" constant="40" id="mYO-Ru-6Uj"/>
+                    </constraints>
+                    <state key="normal" image="attacth.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cameraButtonPressed:" destination="1" eventType="touchUpInside" id="gkz-U4-9kk"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIZ-c4-pcW" userLabel="cancel">
+                    <rect key="frame" x="280" y="2" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="6eu-kl-L0a"/>
+                        <constraint firstAttribute="height" constant="40" id="zbO-sd-vHg"/>
+                    </constraints>
+                    <state key="normal" image="close.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelAudioAttached:" destination="1" eventType="touchUpInside" id="Nt2-mE-4Hn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.87450980392156863" green="0.90196078431372551" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BNK-OO-VgU" secondAttribute="bottom" constant="7" id="7H6-17-DSU"/>
+                <constraint firstItem="BNK-OO-VgU" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="7" id="AjM-3B-utu"/>
+                <constraint firstItem="rHg-Ei-q9Q" firstAttribute="leading" secondItem="BNK-OO-VgU" secondAttribute="trailing" id="PvA-Rn-Xms"/>
+                <constraint firstAttribute="trailing" secondItem="rHg-Ei-q9Q" secondAttribute="trailing" id="Wwh-g1-POq"/>
+                <constraint firstAttribute="trailing" secondItem="VIZ-c4-pcW" secondAttribute="trailing" id="Zja-hK-KpM"/>
+                <constraint firstItem="VIZ-c4-pcW" firstAttribute="top" secondItem="1" secondAttribute="top" constant="2" id="aOf-ua-ksk"/>
+                <constraint firstAttribute="bottom" secondItem="rHg-Ei-q9Q" secondAttribute="bottom" constant="2" id="nrk-iZ-Spo"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="attachButton" destination="rHg-Ei-q9Q" id="myW-Hf-xM4"/>
+                <outlet property="cancelButton" destination="VIZ-c4-pcW" id="9rh-Ac-NCY"/>
+                <outlet property="cancelText" destination="xK8-qV-eIh" id="Mmh-bV-PPE"/>
+                <outlet property="maximumText" destination="9WM-hx-3D1" id="EEu-hs-iRu"/>
+                <outlet property="messageBox" destination="BNK-OO-VgU" id="q1L-ap-BQ9"/>
+                <outlet property="timerText" destination="5pE-nk-LaS" id="v73-wE-WJj"/>
+            </connections>
+        </view>
+        <view tag="2" contentMode="scaleToFill" id="Rlb-eT-HrI" userLabel="Timer">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="197"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recording.png" translatesAutoresizingMaskIntoConstraints="NO" id="fYN-Br-Duf">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="109"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="109" id="SWf-9k-Pu4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pE-nk-LaS" userLabel="Timer">
+                    <rect key="frame" x="79" y="110" width="43" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4Qi-81-6pf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move here to cancel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK8-qV-eIh">
+                    <rect key="frame" x="22" y="160" width="156" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum is 30s" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="9WM-hx-3D1">
+                    <rect key="frame" x="0.0" y="140" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="H5l-VH-CVD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xK8-qV-eIh" firstAttribute="top" secondItem="Rlb-eT-HrI" secondAttribute="top" constant="160" id="Heg-ld-5XW"/>
+                <constraint firstAttribute="centerX" secondItem="5pE-nk-LaS" secondAttribute="centerX" id="QJb-3E-haR"/>
+                <constraint firstAttribute="centerX" secondItem="9WM-hx-3D1" secondAttribute="centerX" id="Tbo-vE-U14"/>
+                <constraint firstAttribute="centerX" secondItem="xK8-qV-eIh" secondAttribute="centerX" id="U9g-Jg-K5J"/>
+                <constraint firstAttribute="trailing" secondItem="fYN-Br-Duf" secondAttribute="trailing" id="fYu-WC-KKo"/>
+                <constraint firstItem="fYN-Br-Duf" firstAttribute="top" secondItem="Rlb-eT-HrI" secondAttribute="top" id="hpL-T7-gh5"/>
+                <constraint firstAttribute="trailing" secondItem="9WM-hx-3D1" secondAttribute="trailing" id="jwY-I0-40N"/>
+                <constraint firstItem="fYN-Br-Duf" firstAttribute="leading" secondItem="Rlb-eT-HrI" secondAttribute="leading" id="n5G-6D-v29"/>
+                <constraint firstItem="5pE-nk-LaS" firstAttribute="top" secondItem="Rlb-eT-HrI" secondAttribute="top" constant="110" id="n9D-HG-fOm"/>
+                <constraint firstItem="9WM-hx-3D1" firstAttribute="top" secondItem="Rlb-eT-HrI" secondAttribute="top" constant="140" id="wVF-xL-ok3"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEw-Ld-OLW" userLabel="touch-record">
+            <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+            <constraints>
+                <constraint firstAttribute="width" constant="68" id="e6i-PV-4ze"/>
+                <constraint firstAttribute="height" constant="68" id="in6-KD-hFG"/>
+            </constraints>
+            <state key="normal" image="touch-record.png">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="startRecorceButtonPressed:" destination="1" eventType="touchDown" id="adf-vD-4Rx"/>
+                <action selector="stopRecordUp:" destination="1" eventType="touchUpInside" id="uNC-2N-bfw"/>
+            </connections>
+        </button>
+    </objects>
+    <resources>
+        <image name="attacth.png" width="20" height="20"/>
+        <image name="close.png" width="15" height="15"/>
+        <image name="recording.png" width="44" height="81"/>
+        <image name="touch-record.png" width="64" height="64"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

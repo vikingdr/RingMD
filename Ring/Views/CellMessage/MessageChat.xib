@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="188" id="X03-Jg-eDb" customClass="RingMessageChatCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X03-Jg-eDb" id="cUc-e3-8T5">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-te-wiP">
+                        <rect key="frame" x="79" y="9" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="Obz-wW-1QR" userLabel="Message">
+                        <rect key="frame" x="79" y="38" width="232" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y1r-hv-nSR">
+                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Dqd-8J-7Te"/>
+                            <constraint firstAttribute="height" constant="60" id="Vj1-x1-IR3"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="oT4-UB-RRv">
+                        <rect key="frame" x="9" y="9" width="62" height="62"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="62" id="KuS-C5-BwT"/>
+                            <constraint firstAttribute="width" constant="62" id="ieh-RB-NWz"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6L-59-t8M" userLabel="status">
+                        <rect key="frame" x="62" y="61" width="10" height="10"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="8of-D9-0vq"/>
+                            <constraint firstAttribute="width" constant="10" id="h7S-MV-qhT"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vN-4X-iKX" userLabel="Time">
+                        <rect key="frame" x="269" y="15" width="42" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Rvk-Qs-LwD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-tX-zcF" userLabel="Attachment View">
+                        <rect key="frame" x="79" y="67" width="232" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7Y-wU-tAa">
+                                <rect key="frame" x="0.0" y="0.0" width="232" height="30"/>
+                                <state key="normal" title="Filename">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openAttachment:" destination="X03-Jg-eDb" eventType="touchUpInside" id="3xb-IH-Qkp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="K7Y-wU-tAa" secondAttribute="bottom" id="0KK-7m-nhP"/>
+                            <constraint firstAttribute="trailing" secondItem="K7Y-wU-tAa" secondAttribute="trailing" id="12s-Ek-DGM"/>
+                            <constraint firstItem="K7Y-wU-tAa" firstAttribute="leading" secondItem="cIC-tX-zcF" secondAttribute="leading" id="VBp-FS-0S5"/>
+                            <constraint firstItem="K7Y-wU-tAa" firstAttribute="top" secondItem="cIC-tX-zcF" secondAttribute="top" id="cjX-Fb-p90"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oT4-UB-RRv" firstAttribute="top" secondItem="cUc-e3-8T5" secondAttribute="top" constant="9" id="1JC-Z5-pmE"/>
+                    <constraint firstItem="XhD-te-wiP" firstAttribute="leading" secondItem="Obz-wW-1QR" secondAttribute="leading" id="5LQ-SA-95x"/>
+                    <constraint firstItem="cIC-tX-zcF" firstAttribute="top" secondItem="cUc-e3-8T5" secondAttribute="topMargin" constant="59" id="5tY-5j-OXi"/>
+                    <constraint firstItem="2vN-4X-iKX" firstAttribute="trailing" secondItem="Obz-wW-1QR" secondAttribute="trailing" id="DaF-BN-GBn"/>
+                    <constraint firstAttribute="trailing" secondItem="2vN-4X-iKX" secondAttribute="trailing" constant="9" id="Dda-DZ-U1I"/>
+                    <constraint firstItem="y1r-hv-nSR" firstAttribute="top" secondItem="cUc-e3-8T5" secondAttribute="top" constant="10" id="HiY-My-Ehn"/>
+                    <constraint firstItem="oT4-UB-RRv" firstAttribute="leading" secondItem="cUc-e3-8T5" secondAttribute="leading" constant="9" id="KVX-qF-IsW"/>
+                    <constraint firstItem="2vN-4X-iKX" firstAttribute="baseline" secondItem="XhD-te-wiP" secondAttribute="baseline" id="L1T-la-VsJ"/>
+                    <constraint firstItem="XhD-te-wiP" firstAttribute="top" secondItem="cUc-e3-8T5" secondAttribute="top" constant="9" id="NAl-Bu-6no"/>
+                    <constraint firstItem="s6L-59-t8M" firstAttribute="leading" secondItem="cUc-e3-8T5" secondAttribute="leading" constant="62" id="SjZ-Ag-Itp"/>
+                    <constraint firstItem="XhD-te-wiP" firstAttribute="leading" secondItem="oT4-UB-RRv" secondAttribute="trailing" constant="8" symbolic="YES" id="TrP-6J-0p8"/>
+                    <constraint firstItem="Obz-wW-1QR" firstAttribute="top" secondItem="cUc-e3-8T5" secondAttribute="topMargin" constant="30" id="WOr-jR-Dsn"/>
+                    <constraint firstItem="cIC-tX-zcF" firstAttribute="trailing" secondItem="Obz-wW-1QR" secondAttribute="trailing" id="eVc-1a-8CG"/>
+                    <constraint firstItem="y1r-hv-nSR" firstAttribute="leading" secondItem="cUc-e3-8T5" secondAttribute="leading" constant="10" id="gJi-je-9Et"/>
+                    <constraint firstItem="cIC-tX-zcF" firstAttribute="leading" secondItem="Obz-wW-1QR" secondAttribute="leading" id="is5-u1-JEG"/>
+                    <constraint firstItem="s6L-59-t8M" firstAttribute="top" secondItem="cUc-e3-8T5" secondAttribute="top" constant="61" id="l8g-bo-lP9"/>
+                    <constraint firstItem="2vN-4X-iKX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XhD-te-wiP" secondAttribute="trailing" constant="8" symbolic="YES" id="niw-c5-9K3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="attachmentButton" destination="K7Y-wU-tAa" id="Cyw-Fk-y8a"/>
+                <outlet property="attachmentTopConstraint" destination="5tY-5j-OXi" id="efE-jU-rkR"/>
+                <outlet property="attachmentView" destination="cIC-tX-zcF" id="Luc-mm-dwS"/>
+                <outlet property="avatarOverlayImage" destination="oT4-UB-RRv" id="RhS-1Y-9cU"/>
+                <outlet property="imageProfile" destination="y1r-hv-nSR" id="oX7-m3-GO3"/>
+                <outlet property="messageText" destination="Obz-wW-1QR" id="kIc-5O-ZBM"/>
+                <outlet property="messageTopConstraint" destination="WOr-jR-Dsn" id="EPt-kC-57s"/>
+                <outlet property="profileStatus" destination="s6L-59-t8M" id="g6b-sb-BAy"/>
+                <outlet property="senderText" destination="XhD-te-wiP" id="w02-Qd-zjR"/>
+                <outlet property="sentTime" destination="2vN-4X-iKX" id="lJF-l8-paY"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="203"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar-bg.png" width="51" height="51"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A388a" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="RingAttachFile" representedClassName="RingAttachFile" syncable="YES">
+        <attribute name="attachFileId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempFilePath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingMessage" inverseName="attachFile" inverseEntity="RingMessage" syncable="YES"/>
+    </entity>
+    <entity name="RingBusinessHour" representedClassName="RingBusinessHour" syncable="YES">
+        <attribute name="from" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="to" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="businessHours" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <entity name="RingBusyHour" representedClassName="RingBusyHour" syncable="YES">
+        <attribute name="busyHourId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="from" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="to" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="busyHours" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <entity name="RingCallRequest" representedClassName="RingCallRequest" syncable="YES">
+        <attribute name="callRequestId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="callTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="doctorJoined" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="durationEstimate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientJoined" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="caller" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="callRequests" inverseEntity="RingUser" syncable="YES"/>
+        <relationship name="openTokSesion" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingOpenTokSession" inverseName="callRequest" inverseEntity="RingOpenTokSession" syncable="YES"/>
+        <relationship name="receiver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="receiveRequests" inverseEntity="RingUser" syncable="YES"/>
+        <relationship name="timeSlots" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RingTimeSlot" inverseName="callRequest" inverseEntity="RingTimeSlot" syncable="YES"/>
+    </entity>
+    <entity name="RingConversation" representedClassName="RingConversation" syncable="YES">
+        <attribute name="unreadCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="latestMessage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingMessage" inverseName="conversationLatest" inverseEntity="RingMessage" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingMessage" inverseName="conversation" inverseEntity="RingMessage" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingUser" inverseName="conversations" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <entity name="RingCountry" representedClassName="RingCountry" syncable="YES">
+        <attribute name="countryId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RingCreditCard" representedClassName="RingCreditCard" syncable="YES">
+        <attribute name="brandType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="creditCardId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="expireMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="expireYear" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="holder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showNumber" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RingExtraPatientQuestion" representedClassName="RingExtraPatientQuestion" syncable="YES">
+        <attribute name="extraPatientQuestionId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="options" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingPatientQuestion" inverseName="extraQuestion" inverseEntity="RingPatientQuestion" syncable="YES"/>
+    </entity>
+    <entity name="RingMedicalSchool" representedClassName="RingMedicalSchool" syncable="YES">
+        <attribute name="medicalSchoolId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RingMessage" representedClassName="RingMessage" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="messageId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="attachFile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingAttachFile" inverseName="message" inverseEntity="RingAttachFile" syncable="YES"/>
+        <relationship name="conversation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingConversation" inverseName="messages" inverseEntity="RingConversation" syncable="YES"/>
+        <relationship name="conversationLatest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingConversation" inverseName="latestMessage" inverseEntity="RingConversation" syncable="YES"/>
+        <relationship name="receiver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="receiveMessages" inverseEntity="RingUser" syncable="YES"/>
+        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="sentMessages" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <entity name="RingNotification" representedClassName="RingNotification" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notificationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="notificationObjectId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="notificationType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="actionUser" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="notifications" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <entity name="RingOpenTokSession" representedClassName="RingOpenTokSession" syncable="YES">
+        <attribute name="sessionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="callRequest" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingCallRequest" inverseName="openTokSesion" inverseEntity="RingCallRequest" syncable="YES"/>
+    </entity>
+    <entity name="RingPatientAnswer" representedClassName="RingPatientAnswer" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastAnswer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientAnswerId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="patientQuestionId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="patientAnswers" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <entity name="RingPatientQuestion" representedClassName="RingPatientQuestion" syncable="YES">
+        <attribute name="patientQuestionId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="extraQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingExtraPatientQuestion" inverseName="parent" inverseEntity="RingExtraPatientQuestion" syncable="YES"/>
+    </entity>
+    <entity name="RingSpeciality" representedClassName="RingSpeciality" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numDoctors" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="parentId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="specialityId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RingSpeciality" inverseName="parent" inverseEntity="RingSpeciality" syncable="YES"/>
+        <relationship name="doctors" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RingUser" inverseName="specialities" inverseEntity="RingUser" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingSpeciality" inverseName="children" inverseEntity="RingSpeciality" syncable="YES"/>
+    </entity>
+    <entity name="RingTimeSlot" representedClassName="RingTimeSlot" syncable="YES">
+        <attribute name="callTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeSlotId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="callRequest" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RingCallRequest" inverseName="timeSlots" inverseEntity="RingCallRequest" syncable="YES"/>
+    </entity>
+    <entity name="RingTimeSlotInMonth" representedClassName="RingTimeSlotInMonth" syncable="YES">
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeSlotInMonthId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RingUser" representedClassName="RingUser" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="authToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatarFull" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canReview" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="currentSymptoms" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentTreatment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="featuredRank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="licenseNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numCalls" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numReviews" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numSpecialities" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="numVideos" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="phoneCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneRawNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pricePerMinuteText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="promotionalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="businessHours" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingBusinessHour" inverseName="user" inverseEntity="RingBusinessHour" syncable="YES"/>
+        <relationship name="busyHours" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingBusyHour" inverseName="user" inverseEntity="RingBusyHour" syncable="YES"/>
+        <relationship name="callRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingCallRequest" inverseName="caller" inverseEntity="RingCallRequest" syncable="YES"/>
+        <relationship name="conversations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingConversation" inverseName="users" inverseEntity="RingConversation" syncable="YES"/>
+        <relationship name="favorites" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RingUser" inverseName="userFavorite" inverseEntity="RingUser" syncable="YES"/>
+        <relationship name="notifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingNotification" inverseName="actionUser" inverseEntity="RingNotification" syncable="YES"/>
+        <relationship name="patientAnswers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingPatientAnswer" inverseName="user" inverseEntity="RingPatientAnswer" syncable="YES"/>
+        <relationship name="receiveMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingMessage" inverseName="receiver" inverseEntity="RingMessage" syncable="YES"/>
+        <relationship name="receiveRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingCallRequest" inverseName="receiver" inverseEntity="RingCallRequest" syncable="YES"/>
+        <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingMessage" inverseName="sender" inverseEntity="RingMessage" syncable="YES"/>
+        <relationship name="specialities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RingSpeciality" inverseName="doctors" inverseEntity="RingSpeciality" syncable="YES"/>
+        <relationship name="userFavorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RingUser" inverseName="favorites" inverseEntity="RingUser" syncable="YES"/>
+    </entity>
+    <configuration name="MainConf">
+        <memberEntity name="RingAttachFile"/>
+        <memberEntity name="RingBusinessHour"/>
+        <memberEntity name="RingBusyHour"/>
+        <memberEntity name="RingCallRequest"/>
+        <memberEntity name="RingConversation"/>
+        <memberEntity name="RingCountry"/>
+        <memberEntity name="RingCreditCard"/>
+        <memberEntity name="RingExtraPatientQuestion"/>
+        <memberEntity name="RingMedicalSchool"/>
+        <memberEntity name="RingMessage"/>
+        <memberEntity name="RingNotification"/>
+        <memberEntity name="RingOpenTokSession"/>
+        <memberEntity name="RingPatientAnswer"/>
+        <memberEntity name="RingPatientQuestion"/>
+        <memberEntity name="RingSpeciality"/>
+        <memberEntity name="RingTimeSlot"/>
+        <memberEntity name="RingTimeSlotInMonth"/>
+        <memberEntity name="RingUser"/>
+    </configuration>
+    <elements>
+        <element name="RingAttachFile" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="RingBusinessHour" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="RingBusyHour" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="RingCallRequest" positionX="0" positionY="0" width="128" height="285"/>
+        <element name="RingConversation" positionX="-684" positionY="171" width="128" height="103"/>
+        <element name="RingCountry" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="RingCreditCard" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="RingExtraPatientQuestion" positionX="18" positionY="162" width="128" height="118"/>
+        <element name="RingMedicalSchool" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="RingMessage" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="RingNotification" positionX="0" positionY="0" width="128" height="148"/>
+        <element name="RingOpenTokSession" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="RingPatientAnswer" positionX="9" positionY="153" width="128" height="133"/>
+        <element name="RingPatientQuestion" positionX="9" positionY="153" width="128" height="103"/>
+        <element name="RingSpeciality" positionX="43" positionY="243" width="128" height="180"/>
+        <element name="RingTimeSlot" positionX="52" positionY="594" width="128" height="105"/>
+        <element name="RingTimeSlotInMonth" positionX="9" positionY="153" width="128" height="135"/>
+        <element name="RingUser" positionX="-288" positionY="-54" width="128" height="585"/>
+    </elements>
+</model>
