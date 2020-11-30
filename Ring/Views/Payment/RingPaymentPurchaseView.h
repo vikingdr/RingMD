@@ -3,7 +3,7 @@
 //  Ring
 //
 //  Created by Medpats on 12/16/2556 BE.
-//  Copyright (c) 2556 Medpats Global Pte. Ltd. All rights reserved.
+//  Copyright (c) 2556 Matthew James All rights reserved.
 //
 
 @class RingCreditCard;

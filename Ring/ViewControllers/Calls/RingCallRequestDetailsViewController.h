@@ -3,7 +3,7 @@
 //  Ring
 //
 //  Created by Tan Nguyen on 9/12/13.
-//  Copyright (c) 2013 Medpats Global Pte. Ltd. All rights reserved.
+//  Copyright (c) 2013 Matthew James All rights reserved.
 //
 
 @class RingCallRequest;

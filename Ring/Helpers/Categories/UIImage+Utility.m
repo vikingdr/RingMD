@@ -2,8 +2,8 @@
 //  UIImage+Utility.m
 //  quizlet
 //
-// Created by Medpats Global Pte. Ltd. on 05/09/13
-// Copyright ( c ) 2013 Medpats Global Pte. Ltd.. All rights reserved.
+// Created by Matthew James on 05/09/13
+// Copyright ( c ) 2013 Matthew James. All rights reserved.
 //
 
 #import "UIImage+Utility.h"

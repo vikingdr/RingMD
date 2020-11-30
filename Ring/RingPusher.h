@@ -3,7 +3,7 @@
 //  Mingle
 //
 //  Created by East Agile on 3/4/13.
-// Copyright ( c ) 2013 Medpats Global Pte. Ltd.. All rights reserved.
+// Copyright ( c ) 2013 Matthew James. All rights reserved.
 //
 
 #import "PTPusherDelegate.h"

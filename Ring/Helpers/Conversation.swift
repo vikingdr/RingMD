@@ -3,7 +3,7 @@
 //  Ring
 //
 //  Created by RingMD on 12/11/14.
-//  Copyright (c) 2014 Medpats Global Pte. Ltd. All rights reserved.
+//  Copyright (c) 2014 Matthew James All rights reserved.
 //
 
 // TO DO: this code needs to be abstracted a little more and used for other 'infinite' table views

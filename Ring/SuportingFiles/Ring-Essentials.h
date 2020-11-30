@@ -3,7 +3,7 @@
 //  Ring
 //
 //  Created by RingMD on 10/10/14.
-//  Copyright (c) 2014 Medpats Global Pte. Ltd. All rights reserved.
+//  Copyright (c) 2014 Matthew James All rights reserved.
 //
 
 #ifndef Ring_Ring_Essentials_h

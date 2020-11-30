@@ -3,7 +3,7 @@
 //  Ring
 //
 //  Created by Medpats on 3/21/2557 BE.
-//  Copyright (c) 2557 Medpats Global Pte. Ltd. All rights reserved.
+//  Copyright (c) 2557 Matthew James All rights reserved.
 //
 
 #import "RingMedicalSchool.h"

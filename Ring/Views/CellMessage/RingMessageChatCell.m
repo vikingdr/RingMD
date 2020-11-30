@@ -3,7 +3,7 @@
 //  Ring
 //
 //  Created by Medpats on 1/15/2557 BE.
-//  Copyright (c) 2557 Medpats Global Pte. Ltd. All rights reserved.
+//  Copyright (c) 2557 Matthew James All rights reserved.
 //
 
 #import "RingMessageChatCell.h"
